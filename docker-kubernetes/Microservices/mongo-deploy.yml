@@ -21,9 +21,6 @@ spec:
       containers:
         - name: mongo
           image: mongo:4.2.12
-          command: # Configurado para permitir dejar ingresar las credenciales de acceso a la basedb
-          - /bin/bash 
-          - -c
           env:  # Setear las configuraciones de acceso
           - name: MONGO_INITDB_ROOT_USERNAME
             value: "ebgue"
