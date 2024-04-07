@@ -15,19 +15,19 @@ spec:
     metadata:
       name: mongo-pod
       labels:
-        app: microservice-libreria
+        app: microservice-libreria # Se deja el nombre porque queremos, queremos que la base de datos este vinculada a microservice-libreria
         name: mongo-pod
     spec:
       containers:
         - name: mongo
-          image: mongo:7.0.8
-          command:
+          image: mongo:4.2.12
+          command: # Configurado para permitir dejar ingresar las credenciales de acceso a la basedb
           - /bin/bash 
           - -c
-          env:
+          env:  # Setear las configuraciones de acceso
           - name: MONGO_INITDB_ROOT_USERNAME
             value: "ebgue"
           - name: MONGO_INITDB_ROOT_PASSWORD
             value: "$ebgU3=iV"
           ports: 
-            - containerPort: 27017
+            - containerPort: 27017 # Puerto default que toma mongo DB

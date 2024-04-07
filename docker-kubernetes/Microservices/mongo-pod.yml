@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: mongo
-      image: mongo:7.0.8
+      image: mongo:4.2.12
       command: # Configurado para permitir dejar ingresar las credenciales de acceso a la basedb
       - /bin/bash 
       - -c
