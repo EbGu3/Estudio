@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: microservide-libreria-deploy
+  labels: 
+    name: microservide-libreria-deploy
+    app: microservice
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      app: microservice-libreria
+      type: microservice
+  template:
+    metadata:
+      name: microservice-libreria-pod
+      labels:
+        app: microservice-libreria
+        type: microservice
+    spec:
+      containers:
+        - name: microservice-libreria-app
+          image: ebgue/serviciosapilibreria:latest
+          ports: 
+            - containerPort: 80
+          env: # Cambiar el valos de lo que esta en appsettins.json, para que el cambio sea dinamico y no tener que actualizar el codigo que se enviara azure
+          - name: MongoDb__ConnectionString
+            value: mongodb://ebgue:$ebgU3=iV@mongo-service:27017 #//<NOMBRE_USUARIO>:<PASSWORD>@<NOMBRE_SERVIDOR>:<NUMERO_PUERTO>

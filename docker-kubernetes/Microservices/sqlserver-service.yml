@@ -1,0 +1,18 @@
+# Archivo de configuracion
+# comunicacion entre cliente y
+# pod
+apiVersion: v1
+kind: Service
+metadata:
+  name: mssql-service
+  labels:
+    name: mssql-service
+    app: database
+spec:
+  type: LoadBalancer   # Es de este tipo porque vamos a trabajar con AZURE
+  ports: 
+    - port: 1433
+      targetPort: 1433
+  selector:
+    app: microservice-seguridad
+    name: mssql-pod

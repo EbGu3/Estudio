@@ -1,0 +1,18 @@
+# Archivo de configuracion
+# comunicacion entre cliente y
+# pod
+apiVersion: v1
+kind: Service
+metadata:
+  name: microservice-libreria-service
+  labels: 
+    name: microservice-libreria-service
+    app: microservice
+spec:
+  type: ClusterIP # Para que solo se permita la conexion local desde cluster y clientes no puedan acceder a el
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: microservice-libreria
+    type: microservice

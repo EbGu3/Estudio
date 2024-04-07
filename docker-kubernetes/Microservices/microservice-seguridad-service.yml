@@ -1,0 +1,18 @@
+# Archivo de configuracion
+# comunicacion entre cliente y
+# pod
+apiVersion: v1
+kind: Service
+metadata:
+  name: microservice-seguridad-service
+  labels: 
+    name: microservice-seguridad-service
+    app: microservice
+spec:
+  type: ClusterIP # Para que solo se permita la conexion local desde cluster y clientes no puedan acceder a el
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: microservice-seguridad
+    type: microservice

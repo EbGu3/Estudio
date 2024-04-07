@@ -1,0 +1,19 @@
+# Archivo de configuracion
+# comunicacion entre cliente y
+# pod
+apiVersion: v1
+kind: Service
+metadata:
+  name: gateway-service
+  labels: 
+    name: gateway-service
+    app: microservice
+spec:
+  type: LoadBalancer #Que tipo de comunicacion va tener el nodo, como usamos AZURE -> es de tipo LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30010
+  selector:
+    app: gateway
+    type: microservice

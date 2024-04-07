@@ -1,0 +1,18 @@
+# Archivo de configuracion
+# comunicacion entre cliente y
+# pod
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-service
+  labels:
+    name: mongo-service
+    app: database
+spec:
+  type: LoadBalancer   # Es de este tipo porque vamos a trabajar con AZURE
+  ports: 
+    - port: 27017
+      targetPort: 27017
+  selector:
+    app: microservice-libreria
+    name: mongo-pod

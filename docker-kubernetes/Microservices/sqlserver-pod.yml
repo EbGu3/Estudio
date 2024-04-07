@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mssql-pod
+  labels:
+    app: microservice-seguridad
+    name: mssql-pod
+spec:
+  containers:
+    - name: mssql
+      image: mcr.microsoft.com/mssql/server
+      env:
+      - name: ACCEPT_EULA # Permite acceder con usuario sa
+        value: "Y"
+      - name: MSSQL_SA_PASSWORD
+        value: "+EbGIv17=x"
+      ports:
+        - containerPort: 1433

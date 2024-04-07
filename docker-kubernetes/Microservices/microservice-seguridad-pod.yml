@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: microservice-seguridad-pod
+  labels:
+    app: microservice-seguridad
+    type: microservice
+spec:
+  containers:
+    - name: microservice-seguridad-app
+      image: ebgue/serviciosapiseguridad:latest
+      ports: 
+        - containerPort: 80
+      env: # Cambiar el valos de lo que esta en appsettins.json, para que el cambio sea dinamico y no tener que actualizar el codigo que se enviara azure
+        - name: ConnectionStrings__ConexionDB # <PROPIEDAD>__<SUB_PROPIEDAD>
+          value: Server=mssql-service;Database=Seguridad;User=sa;Password=EbGIv17=x
