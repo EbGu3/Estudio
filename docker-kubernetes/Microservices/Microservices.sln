@@ -11,17 +11,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servicios.api.Gateway", "Se
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "kubernetes", "kubernetes", "{7086E107-274B-48C2-BBA4-39E5DB99BC48}"
 	ProjectSection(SolutionItems) = preProject
+		gateway-deploy.yml = gateway-deploy.yml
+		gateway-pod.yml = gateway-pod.yml
+		gateway-service.yml = gateway-service.yml
 		microservice-libreria-deploy.yml = microservice-libreria-deploy.yml
 		microservice-libreria-pod.yml = microservice-libreria-pod.yml
-		microservice-seguridad-service.yml = microservice-seguridad-service.yml
-		microservice-seguridad-pod.yml = microservice-seguridad-pod.yml
-		microservice-seguridad-deploy.yml = microservice-seguridad-deploy.yml
 		microservice-libreria-service.yml = microservice-libreria-service.yml
+		microservice-seguridad-deploy.yml = microservice-seguridad-deploy.yml
+		microservice-seguridad-pod.yml = microservice-seguridad-pod.yml
+		microservice-seguridad-service.yml = microservice-seguridad-service.yml
 		mongo-deploy.yml = mongo-deploy.yml
 		mongo-pod.yml = mongo-pod.yml
 		mongo-service.yml = mongo-service.yml
 		sqlserver-deploy.yml = sqlserver-deploy.yml
 		sqlserver-pod.yml = sqlserver-pod.yml
+		sqlserver-service.yml = sqlserver-service.yml
 	EndProjectSection
 EndProject
 Global
